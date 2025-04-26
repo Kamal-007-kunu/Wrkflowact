@@ -12,4 +12,9 @@ jobs:
             - name: Print something about Workflow
               run:
                     echo "This is a new workflow which gets triggered when something is pushed on Kunu branch"
-                    echo pwd
+            - name: Print current date
+              run:
+                    echo "Current date is $(date)"
+            - name: Print current directory
+              run:
+                    echo "Current directory is $(pwd)"
