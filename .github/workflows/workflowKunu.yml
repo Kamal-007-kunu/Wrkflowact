@@ -1,0 +1,15 @@
+name: "Workflow Kunu"
+
+
+on:
+  push:
+    branches: Kunu
+
+jobs:
+    build_kunu:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print something about Workflow
+              run:
+                    echo "This is a new workflow which gets triggered when something is pushed on Kunu branch"
+                    pwd
