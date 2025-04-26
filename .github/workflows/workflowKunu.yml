@@ -3,7 +3,7 @@ name: "Workflow Kunu"
 
 on:
   push:
-    branches: Kunu
+    branches: '**'
 
 jobs:
     build_kunu:
