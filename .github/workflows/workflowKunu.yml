@@ -6,6 +6,7 @@ on:
     branches: 'Kunu'
   pull_request:
       branches: 'master'
+  workflow_dispatch:
 
 jobs:
     runs_on_push:
