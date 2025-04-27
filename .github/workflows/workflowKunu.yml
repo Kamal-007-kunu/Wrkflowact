@@ -6,6 +6,9 @@ on:
     branches: 'Kunu'
   pull_request:
       branches: 'master'
+      types:
+        - closed
+        - opened
   workflow_dispatch:
       
       
@@ -43,6 +46,17 @@ jobs:
             - name: Print something about Workflow when workflow is dispatched
               run:
                     echo "This is a new workflow which gets triggered when workflow is dispatched"
+            - name: Print current date
+              run:
+                    echo "Current date is $(date)"
+                  
+    runs_on_pull_request_closed:
+        runs-on: ubuntu-latest
+        if: github.event_name == 'pull_request' && github.event.action == 'closed'
+        steps:
+            - name: Print something about Workflow when pull request is closed
+              run:
+                    echo "This is a new workflow which gets triggered when pull request is closed"
             - name: Print current date
               run:
                     echo "Current date is $(date)"
