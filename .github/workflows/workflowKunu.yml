@@ -7,6 +7,7 @@ on:
   pull_request:
       branches: 'master'
   workflow_dispatch:
+      
 
 jobs:
     runs_on_push:
@@ -41,5 +42,5 @@ jobs:
                     echo "This is a new workflow which gets triggered when workflow is dispatched"
             - name: Print current date
               run:
-                    echo "Current date is $(date)"
+                    echo "Current date is $(date)...."
             
