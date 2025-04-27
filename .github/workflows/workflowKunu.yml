@@ -32,4 +32,14 @@ jobs:
             - name: Print current date
               run:
                     echo "Current date is $(date)"
+    runs_on_workflow_dispatch:
+        runs-on: ubuntu-latest
+        if: github.event_name == 'workflow_dispatch'
+        steps:
+            - name: Print something about Workflow when workflow is dispatched
+              run:
+                    echo "This is a new workflow which gets triggered when workflow is dispatched"
+            - name: Print current date
+              run:
+                    echo "Current date is $(date)"
             
