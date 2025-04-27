@@ -8,10 +8,10 @@ on:
       branches: 'master'
 
 jobs:
-    build_kunu:
+    runs_on_push:
         runs-on: ubuntu-latest
         steps:
-            - name: Print something about Workflow
+            - name: Print something about Workflow when something is pushed on Kunu branch
               run:
                     echo "This is a new workflow which gets triggered when something is pushed on Kunu branch"
             - name: Print current date
@@ -20,3 +20,13 @@ jobs:
             - name: Print current directory
               run:
                     echo "Current directory is $(pwd)"
+    runs_on_pull_request:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Print something about Workflow when pull request is made
+              run:
+                    echo "This is a new workflow which gets triggered when something is pulled on master branch"
+            - name: Print current date
+              run:
+                    echo "Current date is $(date)"
+            
