@@ -6,10 +6,12 @@ on:
     branches: 'Kunu'
   pull_request:
       branches: 'master'
+  workflow_dispatch:
 
 jobs:
     runs_on_push:
         runs-on: ubuntu-latest
+        if: github.event_name == 'push' 
         steps:
             - name: Print something about Workflow when something is pushed on Kunu branch
               run:
@@ -22,6 +24,7 @@ jobs:
                     echo "Current directory is $(pwd)"
     runs_on_pull_request:
         runs-on: ubuntu-latest
+        if: github.event_name == 'pull_request'
         steps:
             - name: Print something about Workflow when pull request is made
               run:
