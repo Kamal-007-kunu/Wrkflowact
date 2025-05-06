@@ -3,9 +3,9 @@ name: "Workflow Kunu"
 
 on:
   push:
-    branches: 'Kunu'
+    branches: [Kunu]
   pull_request:
-      branches: 'master'
+      branches: [master]
       types:
         - closed
         - opened
